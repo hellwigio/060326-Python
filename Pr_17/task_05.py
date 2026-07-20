@@ -46,7 +46,6 @@ class Student:
 
 
 
-
 s1 = Student.from_string("Bob, 2001-12-03")
 print(s1)
 
