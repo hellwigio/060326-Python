@@ -17,10 +17,18 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
 class Student:
-    pass
+    MIN_AGE = 16
+
+    def __init__(self, name, birth_date):
+        self.name = name
+        self.birth_date = datetime.strptime(birth_date, "%Y-%m-%d")
+
+        if self.get_age() < Student.MIN_AGE:
+            raise ValueError("Student must be at least 16 years old.")
+
 
     def get_age(self):
-        pass
+        return relativedelta(datetime.now(), self.birth_date).years
 
 # Проверка
 try:
