@@ -28,6 +28,9 @@ class Student:
     def get_age(self):
         return relativedelta(datetime.now(), self.birth_date).years
 
+    def calculate_age_on(self, target_date):
+        return relativedelta(target_date, self.birth_date).years
+
     def __str__(self):
         return f"Student: {self.name}, birth_date: {self.birth_date}, ID: {self.student_id}"
 
